@@ -1,15 +1,15 @@
-import express from "express";
-import path from "path";
+import path from 'path';
+import express from 'express';
 
-const app = express();
+export function setupStaticServing(app) {
+	  const frontendPath = path.join(process.cwd(), 'dist');
 
-const clientPath = path.join(__dirname, "..", "client", "dist");
+	    console.log('Serving frontend from:', frontendPath);
 
-app.use(express.static(clientPath));
+	      app.use(express.static(frontendPath));
 
-app.get("*", (req, res) => {
-	  res.sendFile(path.join(clientPath, "index.html"));
-});
-
-export default app;
+	        app.get('*', (req, res) => {
+			    res.sendFile(path.join(frontendPath, 'index.html'));
+			      });
+}
 
