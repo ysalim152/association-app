@@ -1,20 +1,15 @@
-import path from 'path';
-import express from 'express';
+import express from "express";
+import path from "path";
 
-/**
- * Sets up static file serving for the Express app
- * @param app Express application instance
- */
-export function setupStaticServing(app: express.Application) {
-  // Serve static files from the public directory
-  app.use(express.static(path.join(process.cwd(), 'public')));
+const app = express();
 
-  // For any other routes, serve the index.html file
-  app.get('/{*splat}', (req, res, next) => {
-    // Skip API routes
-    if (req.path.startsWith('/api/')) {
-      return next();
-    }
-    res.sendFile(path.join(process.cwd(), 'public', 'index.html'));
-  });
-}
+const clientPath = path.join(__dirname, "..", "client", "dist");
+
+app.use(express.static(clientPath));
+
+app.get("*", (req, res) => {
+	  res.sendFile(path.join(clientPath, "index.html"));
+});
+
+export default app;
+
