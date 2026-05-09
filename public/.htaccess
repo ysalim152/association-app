@@ -1,0 +1,36 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    # Ignorer les fichiers et dossiers existants
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+
+    # Rediriger vers index.php
+    RewriteRule ^(.*)$ index.php?route=$1 [QSA,L]
+</IfModule>
+
+# Sécurité
+<FilesMatch "\.php$">
+    Order Deny,Allow
+    Allow from all
+</FilesMatch>
+
+# Empêcher l'accès aux fichiers sensibles
+<FilesMatch "^(\.env|config\.php|database\.php|init\.sql)">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+
+# Empêcher l'accès au répertoire app
+<Directory ~/app>
+    Order Allow,Deny
+    Deny from all
+</Directory>
+
+# Headers de sécurité
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set X-XSS-Protection "1; mode=block"
+</IfModule>

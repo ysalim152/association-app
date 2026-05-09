@@ -1,0 +1,324 @@
+/* =====================================================
+   Personnalisation Bootstrap 5 - Couleurs imposées
+   Bleu #0D3B66 / Blanc #FFFFFF / Noir #111111
+   ===================================================== */
+
+:root {
+    --primary-blue: #0D3B66;
+    --secondary-blue: #1E88E5;
+    --white: #FFFFFF;
+    --black: #111111;
+    --light-gray: #F5F5F5;
+    --border-color: #E0E0E0;
+}
+
+/* =====================================================
+   GLOBAL STYLES
+   ===================================================== */
+
+html, body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--black);
+}
+
+a {
+    color: var(--primary-blue);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--black);
+    text-decoration: underline;
+}
+
+/* =====================================================
+   BOOTSTRAP OVERRIDES
+   ===================================================== */
+
+/* Couleurs primaires */
+.btn-primary, .btn-primary:focus, .btn-primary:active {
+    background-color: var(--primary-blue);
+    border-color: var(--primary-blue);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background-color: #051d33;
+    border-color: #051d33;
+}
+
+.btn-primary.disabled, .btn-primary:disabled {
+    background-color: var(--primary-blue);
+    opacity: 0.6;
+}
+
+/* Couleurs de lien */
+a.btn-primary { color: var(--white); }
+
+/* Badges */
+.badge-primary {
+    background-color: var(--primary-blue);
+    color: var(--white);
+}
+
+/* Formulaires */
+.form-control:focus, .form-select:focus {
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 0.2rem rgba(13, 59, 102, 0.25);
+}
+
+.form-check-input:checked {
+    background-color: var(--primary-blue);
+    border-color: var(--primary-blue);
+}
+
+/* Alertes */
+.alert-info {
+    background-color: #E3F2FD;
+    color: var(--primary-blue);
+    border-color: var(--secondary-blue);
+}
+
+/* Tables */
+table thead {
+    background-color: var(--primary-blue);
+    color: var(--white);
+}
+
+table th {
+    border-color: var(--primary-blue);
+    font-weight: 600;
+}
+
+table tbody tr:hover {
+    background-color: var(--light-gray);
+}
+
+/* Pagination */
+.pagination .page-link {
+    color: var(--primary-blue);
+    border-color: var(--border-color);
+}
+
+.pagination .page-link:hover {
+    background-color: var(--light-gray);
+    color: var(--primary-blue);
+}
+
+.pagination .page-item.active .page-link {
+    background-color: var(--primary-blue);
+    border-color: var(--primary-blue);
+    color: var(--white);
+}
+
+/* =====================================================
+   NAVBAR
+   ===================================================== */
+
+.navbar {
+    background-color: var(--primary-blue) !important;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.3rem;
+    color: var(--white) !important;
+}
+
+.navbar-brand:hover {
+    opacity: 0.9;
+}
+
+.navbar .nav-link {
+    color: var(--white) !important;
+    margin: 0 0.5rem;
+    transition: all 0.2s ease;
+}
+
+.navbar .nav-link:hover {
+    opacity: 0.8;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+
+.navbar .dropdown-menu {
+    background-color: var(--light-gray);
+    border-color: var(--border-color);
+}
+
+.navbar .dropdown-menu .dropdown-item:hover {
+    background-color: var(--primary-blue);
+    color: var(--white);
+}
+
+/* =====================================================
+   CARDS
+   ===================================================== */
+
+.card {
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-color: var(--primary-blue);
+}
+
+.card-header {
+    background-color: var(--light-gray);
+    border-bottom: 2px solid var(--primary-blue);
+}
+
+/* =====================================================
+   HEADERS ET TITLES
+   ===================================================== */
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--black);
+    font-weight: 600;
+}
+
+h1 {
+    border-bottom: 3px solid var(--primary-blue);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+/* =====================================================
+   FOOTER
+   ===================================================== */
+
+footer {
+    background-color: var(--light-gray);
+    border-top: 2px solid var(--border-color);
+    color: var(--black);
+}
+
+footer a {
+    color: var(--primary-blue);
+}
+
+/* =====================================================
+   UTILITY CLASSES
+   ===================================================== */
+
+.text-primary { color: var(--primary-blue) !important; }
+.bg-primary { background-color: var(--primary-blue) !important; }
+.bg-light { background-color: var(--light-gray) !important; }
+.text-white { color: var(--white) !important; }
+
+/* Badges */
+.badge {
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 0.85rem;
+}
+
+.badge.badge-success {
+    background-color: #4CAF50;
+    color: var(--white);
+}
+
+.badge.badge-danger {
+    background-color: #F44336;
+    color: var(--white);
+}
+
+.badge.badge-warning {
+    background-color: #FF9800;
+    color: var(--white);
+}
+
+.badge.badge-info {
+    background-color: var(--primary-blue);
+    color: var(--white);
+}
+
+/* Boutons spécialisés */
+.btn-icon {
+    padding: 0.5rem 0.75rem;
+    font-size: 1.1rem;
+    border-radius: 4px;
+}
+
+.btn-sm {
+    font-size: 0.85rem;
+}
+
+/* Espacements */
+.mb-4 { margin-bottom: 2rem; }
+.mt-4 { margin-top: 2rem; }
+.pt-4 { padding-top: 2rem; }
+.pb-4 { padding-bottom: 2rem; }
+
+/* =====================================================
+   RESPONSIVE
+   ===================================================== */
+
+@media (max-width: 768px) {
+    .table { font-size: 0.9rem; }
+    h1 { font-size: 1.5rem; }
+    .navbar-brand { font-size: 1.1rem; }
+}
+
+@media (max-width: 576px) {
+    .btn { padding: 0.4rem 0.8rem; font-size: 0.9rem; }
+    table { font-size: 0.8rem; }
+    .card-body { padding: 1rem; }
+}
+
+/* =====================================================
+   LOGIN PAGE
+   ===================================================== */
+
+.login-container {
+    background-color: var(--white);
+    border-left: 5px solid var(--primary-blue);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.login-container h2 {
+    color: var(--primary-blue);
+}
+
+.login-container .btn {
+    background-color: var(--primary-blue);
+    border-color: var(--primary-blue);
+}
+
+/* =====================================================
+   ANIMATIONS
+   ===================================================== */
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.fade-in {
+    animation: fadeIn 0.3s ease;
+}
+
+/* Loader */
+.spinner-border {
+    color: var(--primary-blue) !important;
+}
+
+/* =====================================================
+   ACCESSIBILITY
+   ===================================================== */
+
+:focus-visible {
+    outline: 2px solid var(--primary-blue);
+    outline-offset: 2px;
+}
+
+.btn:focus-visible,
+a:focus-visible {
+    outline: 2px solid var(--primary-blue);
+    outline-offset: 2px;
+}
