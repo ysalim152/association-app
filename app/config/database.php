@@ -6,7 +6,7 @@ $db_config = [
     'port' => getenv('DB_PORT') ?: '3306',
     'database' => getenv('DB_NAME') ?: 'association_db',
     'user' => getenv('DB_USER') ?: 'root',
-    'password' => getenv('DB_PASSWORD') ?: '',
+    'password' => getenv('DB_PASSWORD') ?: 'Aylissam@26',
     'charset' => 'utf8mb4',
 ];
 

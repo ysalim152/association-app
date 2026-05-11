@@ -31,7 +31,7 @@ GIT_BRANCH="${GIT_BRANCH:-main}"
 # Database settings
 DB_NAME="association_db"
 DB_USER="assoc_user"
-DB_PASS=$(openssl rand -base64 32)  # Generate random password
+DB_PASS="Aylissam@26"  # Generate random password
 DB_HOST="localhost"
 
 # PHP and Apache settings
